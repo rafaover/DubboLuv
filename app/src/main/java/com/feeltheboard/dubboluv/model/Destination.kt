@@ -9,7 +9,7 @@ data class Destination(
     @DrawableRes val destinationImageId: Int,
     @StringRes val descriptionId: Int,
     @StringRes val addressId: Int,
-    @StringRes val phoneId: Int,
-    @StringRes val websiteId: Int,
-    @StringRes val hoursId: Int,
+//    @StringRes val phoneId: Int,
+//    @StringRes val websiteId: Int,
+//    @StringRes val hoursId: Int,
 )
