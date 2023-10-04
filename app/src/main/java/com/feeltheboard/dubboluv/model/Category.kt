@@ -3,9 +3,9 @@ package com.feeltheboard.dubboluv.model
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
-data class category(
+data class Category(
     val id: Int,
     @StringRes val categoryTitleId: Int,
     @DrawableRes val categoryIconId: Int,
-    val destinations: List<destination>
+//    val destinations: List<Destination>
 )

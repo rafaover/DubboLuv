@@ -3,7 +3,7 @@ package com.feeltheboard.dubboluv.model
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
-data class destination(
+data class Destination(
     val id: Int,
     @StringRes val titleId: Int,
     @DrawableRes val destinationImageId: Int,
