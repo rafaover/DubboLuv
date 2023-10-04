@@ -27,7 +27,7 @@ fun DubboLuvAppTopBar(modifier: Modifier = Modifier) {
                     contentDescription = stringResource(R.string.app_name),
                     modifier = modifier
                         .padding(dimensionResource(R.dimen.padding_small))
-                        .size(dimensionResource(R.dimen.image_size))
+                        .size(dimensionResource(R.dimen.brand_size))
                 )
                 Text(
                     text = stringResource(R.string.app_name),
