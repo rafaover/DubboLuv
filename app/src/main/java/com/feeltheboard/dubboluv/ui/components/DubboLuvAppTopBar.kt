@@ -25,7 +25,7 @@ fun DubboLuvAppTopBar(modifier: Modifier = Modifier) {
                 Image(
                     painter = painterResource(R.drawable.baseline_location_city_24),
                     contentDescription = stringResource(R.string.app_name),
-                    modifier = Modifier
+                    modifier = modifier
                         .padding(dimensionResource(R.dimen.padding_small))
                         .size(dimensionResource(R.dimen.image_size))
                 )
