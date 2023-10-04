@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">DubboLuv</string>
+
+    <!-- List of Categories-->
+    <string name="category1_asianfood">Asian Food</string>
+    <string name="category2_bakery">Bakery</string>
+    <string name="category3_breakkie">Breakkie</string>
+    <string name="category4_butcher">Butcher</string>
+    <string name="category5_burger">Burger</string>
+    <string name="category6_coffeespot">Coffee Spot</string>
+    <string name="category7_kidspark">Kids Park</string>
+    <string name="category8_Lunch">Lunch</string>
+    <string name="category9_pizza">Pizza</string>
+    <string name="category10_pub">Pub</string>
 </resources>
