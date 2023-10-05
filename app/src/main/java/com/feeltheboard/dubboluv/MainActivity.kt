@@ -9,6 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.feeltheboard.dubboluv.ui.DubboLuvApp
 import com.feeltheboard.dubboluv.ui.theme.DubboLuvTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +22,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    TODO("Add function to main content")
+                    DubboLuvApp()
                 }
             }
         }
@@ -32,6 +33,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     DubboLuvTheme {
-        TODO("Add function to main preview")
+        DubboLuvApp()
     }
 }
