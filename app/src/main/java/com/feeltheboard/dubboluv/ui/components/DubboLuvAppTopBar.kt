@@ -31,7 +31,7 @@ fun DubboLuvAppTopBar(modifier: Modifier = Modifier) {
                 )
                 Text(
                     text = stringResource(R.string.app_name),
-                    style = MaterialTheme.typography.displayMedium
+                    style = MaterialTheme.typography.displayLarge
                 )
             }
         }
