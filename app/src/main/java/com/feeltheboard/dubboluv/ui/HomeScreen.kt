@@ -14,17 +14,24 @@ fun DubboLuvApp() {
     Scaffold (
         topBar = {
             DubboLuvAppTopBar()
-        },
-        content = {
-            HomeScreenCategoryList(contentPadding = it)
         }
-    )
+    ) { innerPadding ->
+        HomeScreenCategoryList(contentPadding = innerPadding)
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DubboLuvAppPreview() {
-    DubboLuvTheme {
+    DubboLuvTheme(darkTheme = false) {
+        DubboLuvApp()
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DubboLuvAppPreviewDarkTheme() {
+    DubboLuvTheme(darkTheme = true) {
         DubboLuvApp()
     }
 }
