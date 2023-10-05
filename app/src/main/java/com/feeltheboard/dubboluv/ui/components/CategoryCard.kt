@@ -1,8 +1,5 @@
 package com.feeltheboard.dubboluv.ui.components
 
-import androidx.compose.animation.animateContentSize
-import androidx.compose.animation.core.Spring
-import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,6 +15,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import com.feeltheboard.dubboluv.R
 import com.feeltheboard.dubboluv.model.Category
 
@@ -27,15 +25,7 @@ fun CategoryCard(
     modifier: Modifier = Modifier
 ) {
     Card(modifier = modifier) {
-        Column(
-            modifier = modifier
-                .animateContentSize(
-                    animationSpec = spring(
-                        dampingRatio = Spring.DampingRatioLowBouncy,
-                        stiffness = Spring.StiffnessMedium
-                    )
-                )
-        ) {
+        Column(modifier = modifier) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -48,10 +38,10 @@ fun CategoryCard(
                         .clip(MaterialTheme.shapes.small),
                     painter = painterResource(category.categoryIconId),
                     contentScale = ContentScale.Crop,
-                    contentDescription = category.categoryTitleId.toString()
+                    contentDescription = stringResource(category.categoryTitleId)
                 )
                 Text(
-                    text = category.categoryTitleId.toString(),
+                    text = stringResource(category.categoryTitleId),
                     style = MaterialTheme.typography.displayMedium
                 )
             }
