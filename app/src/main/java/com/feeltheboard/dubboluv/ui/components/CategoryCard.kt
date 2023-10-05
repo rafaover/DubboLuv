@@ -10,6 +10,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -25,11 +26,13 @@ fun CategoryCard(
     modifier: Modifier = Modifier
 ) {
     Card(modifier = modifier) {
-        Column(modifier = modifier) {
+        Column {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(dimensionResource(R.dimen.padding_small))
+                    .padding(dimensionResource(R.dimen.padding_small)),
+                verticalAlignment = Alignment.CenterVertically
+
             ) {
                 Image(
                     modifier = modifier
@@ -42,7 +45,7 @@ fun CategoryCard(
                 )
                 Text(
                     text = stringResource(category.categoryTitleId),
-                    style = MaterialTheme.typography.displayMedium
+                    style = MaterialTheme.typography.displayMedium,
                 )
             }
         }
