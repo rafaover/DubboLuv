@@ -2,27 +2,25 @@ package com.feeltheboard.dubboluv.data
 
 import com.feeltheboard.dubboluv.model.Category
 
-object CategoryData {
-    fun getCategoriesData(): List<Category> {
-        return listOf(
-            Category(
-                id = 1,
-                categoryTitleId = com.feeltheboard.dubboluv.R.string.category1_asianfood,
-                categoryIconId = com.feeltheboard.dubboluv.R.drawable.asian_food_24,
+val categoryList = listOf(
+        Category(
+            id = 1,
+            categoryTitleId = com.feeltheboard.dubboluv.R.string.category1_asianfood,
+            categoryIconId = com.feeltheboard.dubboluv.R.drawable.asian_food_24,
 //                destinations = DestinationData.getDestinationsData()
-            ),
-            Category(
-                id = 2,
-                categoryTitleId = com.feeltheboard.dubboluv.R.string.category2_bakery,
-                categoryIconId = com.feeltheboard.dubboluv.R.drawable.bakery_24,
+        ),
+        Category(
+            id = 2,
+            categoryTitleId = com.feeltheboard.dubboluv.R.string.category2_bakery,
+            categoryIconId = com.feeltheboard.dubboluv.R.drawable.bakery_24,
 //                destinations = DestinationData.getDestinationsData()
-            ),
-            Category(
-                id = 3,
-                categoryTitleId = com.feeltheboard.dubboluv.R.string.category3_breakkie,
-                categoryIconId = com.feeltheboard.dubboluv.R.drawable.breakfast_24,
+        ),
+        Category(
+            id = 3,
+            categoryTitleId = com.feeltheboard.dubboluv.R.string.category3_breakkie,
+            categoryIconId = com.feeltheboard.dubboluv.R.drawable.breakfast_24,
 //                destinations = DestinationData.getDestinationsData()
-            ),
+        ),
 //            Category(
 //                id = 4,
 //                categoryTitleId = com.feeltheboard.dubboluv.R.string.category4_butcher,
@@ -65,6 +63,4 @@ object CategoryData {
 //                categoryIconId = com.feeltheboard.dubboluv.R.drawable.ic_category_10,
 //                destinations = DestinationData.getDestinationsData()
 //            ),
-        )
-    }
-}
+)
