@@ -15,4 +15,16 @@
 
     <!-- List of Destinations -->
         <!-- Asian Food -->
+            <!-- Tanoshi -->
+    <string name="tanoshi_title">Tanoshi Japanese Restaurant</string>
+    <string name="tanoshi_description">Japanese Restaurant in Dubbo</string>
+    <string name="tanoshi_address">57 Talbragar St, Dubbo NSW 2830</string>
+            <!-- Rose Garden Thai -->
+    <string name="rosegarden_title">Rose Garden Thai Restaurant</string>
+    <string name="rosegarden_description">Thai Restaurant in Dubbo</string>
+    <string name="rosegarden_address">208 Brisbane Street, Dubbo NSW 2830</string>
+            <!-- Rose Garden Thai -->
+    <string name="amazingthai_title">Amazing Thai Restaurant</string>
+    <string name="amazingthai_description">Thai Restaurant in Dubbo</string>
+    <string name="amazingthai_address">36 cobra street, Dubbo NSW 2830</string>
 </resources>
