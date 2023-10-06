@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -18,14 +19,21 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import com.feeltheboard.dubboluv.R
+import com.feeltheboard.dubboluv.data.SelectedAsianFood
 import com.feeltheboard.dubboluv.model.Category
+import com.feeltheboard.dubboluv.model.Destination
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CategoryCard(
+    onCardClick: (Destination) -> Unit,
     category: Category,
     modifier: Modifier = Modifier
 ) {
-    Card(modifier = modifier) {
+    Card(
+        modifier = modifier,
+        onClick = { onCardClick(TODO("Destination Composable with List for the Category"))}
+    ) {
         Column {
             Row(
                 modifier = Modifier
