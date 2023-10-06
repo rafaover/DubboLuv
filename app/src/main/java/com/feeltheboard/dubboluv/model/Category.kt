@@ -7,5 +7,5 @@ data class Category(
     val id: Int,
     @StringRes val categoryTitleId: Int,
     @DrawableRes val categoryIconId: Int,
-//    val destinations: List<Destination>
+    val destinations: List<Destination>
 )
