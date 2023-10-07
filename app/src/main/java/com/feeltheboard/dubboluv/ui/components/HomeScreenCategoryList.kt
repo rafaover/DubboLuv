@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import com.feeltheboard.dubboluv.R
 import com.feeltheboard.dubboluv.data.categoryList
+import com.feeltheboard.dubboluv.model.Category
 
 @Composable
 fun HomeScreenCategoryList(
@@ -20,7 +21,11 @@ fun HomeScreenCategoryList(
         items(categoryList) { category ->
             CategoryCard(
                 category = category,
-                modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium))
+                modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
+                onCardClick = {
+                    TODO("Navigate to the category screen with List of Destinations")
+                }
+
             )
         }
     }
