@@ -26,13 +26,13 @@ import com.feeltheboard.dubboluv.model.Destination
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CategoryCard(
-    onCardClick: (Destination) -> Unit,
+    onCardClick: () -> Unit,
     category: Category,
     modifier: Modifier = Modifier
 ) {
     Card(
         modifier = modifier,
-        onClick = { onCardClick(TODO("Destination Composable with List for the Category"))}
+        onClick = onCardClick
     ) {
         Column {
             Row(
