@@ -34,7 +34,7 @@ class CategoriesViewModel: ViewModel() {
 }
 
 data class CategoryUiState(
-    val selectedCategoryList: List<Destination> = SelectedAsianFood,
+    val selectedCategoryList: List<Destination> = emptyList(),
     val currentCategory: Category = categoryList[0],
     val isShowingCategoryList: Boolean = true,
 )
