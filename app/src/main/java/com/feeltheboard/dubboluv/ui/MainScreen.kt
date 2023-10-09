@@ -18,7 +18,7 @@ import com.feeltheboard.dubboluv.ui.theme.DubboLuvTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DubboLuvApp() {
-    val viewModel: CategoriesViewModel = CategoriesViewModel()
+    val viewModel = CategoriesViewModel()
     val uiState by viewModel.uiState.collectAsState()
     Scaffold (
         topBar = {
@@ -30,14 +30,26 @@ fun DubboLuvApp() {
             )
         }
     ) { innerPadding ->
-        HomeScreenCategoryList(
-            contentPadding = innerPadding,
-            modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
-            onClick = {
-                viewModel.updateCurrentCategory(it)
-                viewModel.navigateToSelectedCategoryPage()
-            }
-        )
+        if (uiState.isShowingCategoryList){
+            HomeScreenCategoryList(
+                contentPadding = innerPadding,
+                modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
+                onClick = {
+                    viewModel.updateCurrentCategory(it)
+                    viewModel.navigateToSelectedCategoryPage()
+                }
+            )
+        } else {
+            SelectedCategoryScreen(
+                onClick = { /*TODO*/ },
+                onBackPressed = {
+                    viewModel.navigateToCategoryListPage()
+                },
+                contentPadding = innerPadding,
+                destinationList = uiState.selectedCategoryList,
+                modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium))
+            )
+        }
     }
 }
 
