@@ -1,11 +1,16 @@
 package com.feeltheboard.dubboluv.ui.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -18,7 +23,11 @@ import com.feeltheboard.dubboluv.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DubboLuvAppTopBar(modifier: Modifier = Modifier) {
+fun DubboLuvAppTopBar(
+    modifier: Modifier = Modifier,
+    isShowingCategoryList: Boolean,
+    onBackButtonClick: () -> Unit
+) {
     CenterAlignedTopAppBar(
         title = {
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -34,6 +43,18 @@ fun DubboLuvAppTopBar(modifier: Modifier = Modifier) {
                     style = MaterialTheme.typography.displayLarge
                 )
             }
+        },
+        navigationIcon = if (!isShowingCategoryList) {
+            {
+                IconButton(onClick = onBackButtonClick) {
+                    Icon(
+                        imageVector = Icons.Filled.ArrowBack,
+                        contentDescription = stringResource(R.string.back_button)
+                    )
+                }
+            }
+        } else {
+            { Box {} }
         }
     )
 }
