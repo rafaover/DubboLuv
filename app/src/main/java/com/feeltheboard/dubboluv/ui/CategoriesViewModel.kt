@@ -1,16 +1,18 @@
 package com.feeltheboard.dubboluv.ui
 
 import androidx.lifecycle.ViewModel
+import com.feeltheboard.dubboluv.data.SelectedAsianFood
 import com.feeltheboard.dubboluv.data.categoryList
 import com.feeltheboard.dubboluv.model.Category
 import com.feeltheboard.dubboluv.model.Destination
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 
 class CategoriesViewModel: ViewModel() {
 
     private val _uiState = MutableStateFlow(CategoryUiState())
-    val uiState = _uiState
+    val uiState: StateFlow<CategoryUiState> = _uiState
 
     fun updateCurrentCategory(selectedCategory: Category) {
         _uiState.update {
@@ -32,7 +34,7 @@ class CategoriesViewModel: ViewModel() {
 }
 
 data class CategoryUiState(
-    val selectedCategoryList: List<Destination> = emptyList(),
+    val selectedCategoryList: List<Destination> = SelectedAsianFood,
     val currentCategory: Category = categoryList[0],
     val isShowingCategoryList: Boolean = true,
 )
