@@ -17,6 +17,7 @@ class CategoriesViewModel: ViewModel() {
     fun updateCurrentCategory(selectedCategory: Category) {
         _uiState.update {
             it.copy(currentCategory = selectedCategory)
+            it.copy(selectedCategoryList = selectedCategory.destinations)
         }
     }
 
