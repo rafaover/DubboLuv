@@ -12,7 +12,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.feeltheboard.dubboluv.R
 import com.feeltheboard.dubboluv.ui.components.DubboLuvAppTopBar
 import com.feeltheboard.dubboluv.ui.components.HomeScreenCategoryList
-import com.feeltheboard.dubboluv.ui.components.SelectedCategoryScreen
+import com.feeltheboard.dubboluv.ui.components.SelectedCategoryDestinationList
 import com.feeltheboard.dubboluv.ui.theme.DubboLuvTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -40,8 +40,7 @@ fun DubboLuvApp() {
                 }
             )
         } else {
-            SelectedCategoryScreen(
-                onClick = { /*TODO*/ },
+            SelectedCategoryDestinationList(
                 onBackPressed = {
                     viewModel.navigateToCategoryListPage()
                 },

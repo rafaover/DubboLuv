@@ -10,8 +10,7 @@ import androidx.compose.ui.Modifier
 import com.feeltheboard.dubboluv.model.Destination
 
 @Composable
-fun SelectedCategoryScreen(
-    onClick: (Destination) -> Unit,
+fun SelectedCategoryDestinationList(
     onBackPressed: () -> Unit,
     contentPadding: PaddingValues,
     destinationList: List<Destination>,
@@ -29,7 +28,6 @@ fun SelectedCategoryScreen(
                 DestinationCard(
                      destination = it,
                      modifier = modifier,
-                     onCardClick = onClick
                 )
            }
        }

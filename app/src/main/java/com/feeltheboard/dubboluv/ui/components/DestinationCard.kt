@@ -24,13 +24,11 @@ import com.feeltheboard.dubboluv.model.Destination
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DestinationCard(
-    onCardClick: (Destination) -> Unit,
     destination: Destination,
     modifier: Modifier = Modifier
 ) {
     Card(
         modifier = modifier,
-        onClick = { onCardClick(destination) }
     ) {
         Column {
             Row(
