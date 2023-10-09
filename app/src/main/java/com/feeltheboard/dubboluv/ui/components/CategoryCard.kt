@@ -19,20 +19,18 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import com.feeltheboard.dubboluv.R
-import com.feeltheboard.dubboluv.data.SelectedAsianFood
 import com.feeltheboard.dubboluv.model.Category
-import com.feeltheboard.dubboluv.model.Destination
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CategoryCard(
-    onCardClick: () -> Unit,
+    onCardClick: (Category) -> Unit,
     category: Category,
     modifier: Modifier = Modifier
 ) {
     Card(
         modifier = modifier,
-        onClick = onCardClick
+        onClick = { onCardClick(category) }
     ) {
         Column {
             Row(
