@@ -9,6 +9,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.feeltheboard.dubboluv.R
 import com.feeltheboard.dubboluv.ui.components.DubboLuvAppTopBar
 import com.feeltheboard.dubboluv.ui.components.HomeScreenCategoryList
@@ -18,7 +19,7 @@ import com.feeltheboard.dubboluv.ui.theme.DubboLuvTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DubboLuvApp() {
-    val viewModel = CategoriesViewModel()
+    val viewModel: CategoriesViewModel = viewModel()
     val uiState by viewModel.uiState.collectAsState()
     Scaffold (
         topBar = {
