@@ -36,6 +36,7 @@ fun DubboLuvApp() {
                 modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
                 onClick = {
                     viewModel.updateCurrentCategory(it)
+                    viewModel.updateSelectedCategoryList(it.destinations)
                     viewModel.navigateToSelectedCategoryPage()
                 }
             )
