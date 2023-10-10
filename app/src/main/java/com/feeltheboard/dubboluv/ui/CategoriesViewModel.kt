@@ -1,8 +1,6 @@
 package com.feeltheboard.dubboluv.ui
 
 import androidx.lifecycle.ViewModel
-import com.feeltheboard.dubboluv.data.SelectedAsianFood
-import com.feeltheboard.dubboluv.data.categoryList
 import com.feeltheboard.dubboluv.model.Category
 import com.feeltheboard.dubboluv.model.Destination
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -17,7 +15,12 @@ class CategoriesViewModel: ViewModel() {
     fun updateCurrentCategory(selectedCategory: Category) {
         _uiState.update {
             it.copy(currentCategory = selectedCategory)
-            it.copy(selectedCategoryList = selectedCategory.destinations)
+        }
+    }
+
+    fun updateSelectedCategoryList(selectedCategoryList: List<Destination>) {
+        _uiState.update {
+            it.copy(selectedCategoryList = selectedCategoryList)
         }
     }
 
@@ -33,9 +36,3 @@ class CategoriesViewModel: ViewModel() {
         }
     }
 }
-
-data class CategoryUiState(
-    val selectedCategoryList: List<Destination> = emptyList(),
-    val currentCategory: Category = categoryList[0],
-    val isShowingCategoryList: Boolean = true,
-)
