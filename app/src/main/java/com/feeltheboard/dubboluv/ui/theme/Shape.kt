@@ -12,5 +12,8 @@ val Shapes = Shapes(
     /** The main goal of this shape is to target the CARD composable.
     The card composable by default is a medium shape. So you do not need to specify it there.
     It will be applied automatically. */
-    medium = RoundedCornerShape(bottomStart = 16.dp)
+    medium = RoundedCornerShape(bottomStart = 16.dp),
+
+    /** The default shape for the Selected Category Destinations Cards composable. */
+    large = RoundedCornerShape(16.dp)
 )
