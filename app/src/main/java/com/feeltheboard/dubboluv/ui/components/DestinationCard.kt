@@ -51,7 +51,7 @@ fun DestinationCard(
                     text = stringResource(destination.titleId),
                     modifier = Modifier
                         .padding(dimensionResource(R.dimen.padding_medium)),
-                    style = MaterialTheme.typography.labelSmall,
+                    style = MaterialTheme.typography.bodyLarge,
                     color = MaterialTheme.colorScheme.onPrimaryContainer
 
                 )
