@@ -32,10 +32,9 @@ fun DubboLuvAppTopBar(
         title = {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Image(
-                    painter = painterResource(R.drawable.baseline_location_city_24),
+                    painter = painterResource(R.drawable.ic_launcher_foreground),
                     contentDescription = stringResource(R.string.app_name),
                     modifier = modifier
-                        .padding(dimensionResource(R.dimen.padding_small))
                         .size(dimensionResource(R.dimen.brand_size))
                 )
                 Text(
