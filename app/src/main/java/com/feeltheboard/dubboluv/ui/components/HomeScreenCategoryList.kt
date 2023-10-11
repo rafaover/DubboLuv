@@ -19,8 +19,8 @@ fun HomeScreenCategoryList(
     ) {
         items(categoryList) {
             CategoryCard(
-                category = it,
                 modifier = modifier,
+                category = it,
                 onCardClick = onClick
             )
         }

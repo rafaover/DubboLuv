@@ -33,9 +33,7 @@ fun CategoryCard(
             .fillMaxWidth()
             .height(dimensionResource(R.dimen.category_card_height)),
         onClick = { onCardClick(category) },
-        elevation = CardDefaults.cardElevation(
-                dimensionResource(R.dimen.elevation_cards)
-        )
+        elevation = CardDefaults.elevatedCardElevation()
     ) {
         Row(
             modifier = Modifier

@@ -43,12 +43,12 @@ fun DubboLuvApp() {
             )
         } else {
             SelectedCategoryDestinationList(
+                contentPadding = innerPadding,
+                modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
+                destinationList = uiState.selectedCategoryList,
                 onBackPressed = {
                     viewModel.navigateToCategoryListPage()
                 },
-                contentPadding = innerPadding,
-                destinationList = uiState.selectedCategoryList,
-                modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium))
             )
         }
     }

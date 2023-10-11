@@ -26,8 +26,8 @@ fun SelectedCategoryDestinationList(
        ) {
            items(destinationList) {
                 DestinationCard(
-                     destination = it,
-                     modifier = modifier,
+                    modifier = modifier,
+                    destination = it,
                 )
            }
        }
