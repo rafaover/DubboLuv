@@ -8,6 +8,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.feeltheboard.dubboluv.R
 
+val AveriaSerifLibre = FontFamily(
+    Font(R.font.averia_serif_libre_regular),
+)
+
 val AbrilFatFace = FontFamily(
     Font(R.font.abril_fatface_regular)
 )
@@ -18,13 +22,13 @@ val Montserrat = FontFamily(
 
 val Typography = Typography(
     displayLarge = TextStyle(
-        fontFamily = AbrilFatFace,
-        fontWeight=FontWeight.Normal,
+        fontFamily = AveriaSerifLibre,
+        fontWeight=FontWeight.Bold,
         fontSize = 36.sp
     ),
     displayMedium = TextStyle(
         fontFamily = Montserrat,
-        fontWeight=FontWeight.Bold,
+        fontWeight=FontWeight.Normal,
         fontSize=20.sp
     ),
     labelSmall = TextStyle(
