@@ -1,9 +1,8 @@
 package com.feeltheboard.dubboluv.ui.components
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -14,7 +13,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -31,39 +29,30 @@ fun CategoryCard(
     modifier: Modifier = Modifier
 ) {
     Card(
-        modifier = modifier,
+        modifier = modifier
+            .fillMaxWidth()
+            .height(dimensionResource(R.dimen.category_card_height)),
         onClick = { onCardClick(category) },
-//        border = BorderStroke(
-//            dimensionResource(R.dimen.border_stroke_cards),
-//            MaterialTheme.colorScheme.onPrimaryContainer
-//        ),
         elevation = CardDefaults.cardElevation(
                 dimensionResource(R.dimen.elevation_cards)
         )
     ) {
-        Column {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(dimensionResource(R.dimen.padding_small)),
-                verticalAlignment = Alignment.CenterVertically
-
-            ) {
-                Icon(
-                    modifier = modifier
-                        .size(dimensionResource(R.dimen.image_size))
-                        .padding(dimensionResource(R.dimen.padding_small))
-                        .clip(MaterialTheme.shapes.small),
-                    painter = painterResource(category.categoryIconId),
-                    contentDescription = stringResource(category.categoryTitleId),
-                    tint = MaterialTheme.colorScheme.secondary,
-                )
-                Text(
-                    text = stringResource(category.categoryTitleId),
-                    style = MaterialTheme.typography.displayMedium,
-                    color = MaterialTheme.colorScheme.onPrimaryContainer,
-                )
-            }
+        Row(
+            modifier = Modifier
+                .fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(
+                modifier = modifier.size(dimensionResource(R.dimen.icon_category_card_size)),
+                painter = painterResource(category.categoryIconId),
+                contentDescription = stringResource(category.categoryTitleId),
+                tint = MaterialTheme.colorScheme.secondary,
+            )
+            Text(
+                text = stringResource(category.categoryTitleId),
+                style = MaterialTheme.typography.displayMedium,
+                color = MaterialTheme.colorScheme.onPrimaryContainer,
+            )
         }
     }
 }
