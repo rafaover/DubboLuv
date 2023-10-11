@@ -7,7 +7,6 @@
     <dimen name="image_size">64dp</dimen>
     <dimen name="category_card_height">80dp</dimen>
     <dimen name="border_stroke">1dp</dimen>
-    <dimen name="elevation_cards">4dp</dimen>
     <dimen name="icon_category_card_size">80dp</dimen>
 
 </resources>
