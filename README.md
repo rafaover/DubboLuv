@@ -6,7 +6,7 @@ Built using:
 - Material Design 3
 - Kotlin
 - Jetpack Compose
-- Flow
+- StateFlow
 - Adaptive Layout
 
 Under Development
