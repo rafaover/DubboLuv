@@ -3,7 +3,6 @@ package com.feeltheboard.dubboluv.ui.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -13,6 +12,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -26,8 +26,10 @@ import com.feeltheboard.dubboluv.R
 fun DubboLuvAppTopBar(
     modifier: Modifier = Modifier,
     isShowingCategoryList: Boolean,
+    windowSize: WindowWidthSizeClass,
     onBackButtonClick: () -> Unit
 ) {
+    val isShowingDestinations = windowSize != WindowWidthSizeClass.Expanded && !isShowingCategoryList
     CenterAlignedTopAppBar(
         title = {
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -43,7 +45,7 @@ fun DubboLuvAppTopBar(
                 )
             }
         },
-        navigationIcon = if (!isShowingCategoryList) {
+        navigationIcon = if (isShowingDestinations) {
             {
                 IconButton(onClick = onBackButtonClick) {
                     Icon(
