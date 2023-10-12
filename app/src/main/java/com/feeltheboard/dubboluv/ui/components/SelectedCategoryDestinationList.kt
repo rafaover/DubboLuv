@@ -19,17 +19,14 @@ fun SelectedCategoryDestinationList(
     BackHandler {
         onBackPressed()
     }
-
-    Column {
-       LazyColumn(
-           contentPadding = contentPadding
-       ) {
-           items(destinationList) {
-                DestinationCard(
-                    modifier = modifier,
-                    destination = it,
-                )
-           }
+    LazyColumn(
+       contentPadding = contentPadding
+    ) {
+       items(destinationList) {
+            DestinationCard(
+                modifier = modifier,
+                destination = it,
+            )
        }
     }
-}
+    }
