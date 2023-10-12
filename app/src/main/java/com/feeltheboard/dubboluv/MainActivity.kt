@@ -24,7 +24,8 @@ class MainActivity : ComponentActivity() {
                 ) {
                     val windowSize = calculateWindowSizeClass(this)
                     DubboLuvApp(
-                        windowSize = windowSize.widthSizeClass
+                        windowSize = windowSize.widthSizeClass,
+                        onBackPressed = { finish() }
                     )
                 }
             }

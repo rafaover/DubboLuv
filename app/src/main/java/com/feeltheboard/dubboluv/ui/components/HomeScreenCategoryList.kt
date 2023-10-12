@@ -10,6 +10,7 @@ import com.feeltheboard.dubboluv.model.Category
 
 @Composable
 fun HomeScreenCategoryList(
+    categoryList: List<Category>,
     contentPadding: PaddingValues,
     onClick: (Category) -> Unit,
     modifier: Modifier = Modifier
@@ -17,10 +18,10 @@ fun HomeScreenCategoryList(
     LazyColumn(
         contentPadding = contentPadding
     ) {
-        items(categoryList) {
+        items(categoryList) {category ->
             CategoryCard(
                 modifier = modifier,
-                category = it,
+                category = category,
                 onCardClick = onClick
             )
         }

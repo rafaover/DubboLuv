@@ -1,7 +1,6 @@
 package com.feeltheboard.dubboluv.ui
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
@@ -11,61 +10,60 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.feeltheboard.dubboluv.R
+import com.feeltheboard.dubboluv.data.categoryList
+import com.feeltheboard.dubboluv.ui.components.CategoriesAndDestinationsList
 import com.feeltheboard.dubboluv.ui.components.DubboLuvAppTopBar
 import com.feeltheboard.dubboluv.ui.components.HomeScreenCategoryList
 import com.feeltheboard.dubboluv.ui.components.SelectedCategoryDestinationList
 import com.feeltheboard.dubboluv.utils.ScreenContentType
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DubboLuvApp(
-    windowSize: WindowWidthSizeClass
+    windowSize: WindowWidthSizeClass,
+    onBackPressed: () -> Unit,
 ) {
     val viewModel: CategoriesViewModel = viewModel()
     val uiState by viewModel.uiState.collectAsState()
-    val contentType: ScreenContentType
 
-    when(windowSize) {
-        WindowWidthSizeClass.Compact -> {
-            contentType = ScreenContentType.CATEGORIES
-        }
-        WindowWidthSizeClass.Medium -> {
-            contentType = ScreenContentType.CATEGORIES
-        }
-        WindowWidthSizeClass.Expanded -> {
-            contentType = ScreenContentType.CATEGORIES_AND_DESTINATIONS
-        } else -> {
-            contentType = ScreenContentType.CATEGORIES
-        }
+    val contentType: ScreenContentType = when(windowSize) {
+        WindowWidthSizeClass.Compact -> ScreenContentType.CATEGORIES
+        WindowWidthSizeClass.Medium -> ScreenContentType.CATEGORIES
+        WindowWidthSizeClass.Expanded -> ScreenContentType.CATEGORIES_AND_DESTINATIONS
+        else -> ScreenContentType.CATEGORIES
     }
 
     Scaffold (
         topBar = {
             DubboLuvAppTopBar(
                 isShowingCategoryList = uiState.isShowingCategoryList,
-                onBackButtonClick = {
-                    viewModel.navigateToCategoryListPage()
-                }
+                onBackButtonClick = { viewModel.navigateToCategoryListPage() },
+                windowSize = windowSize
             )
         }
     ) { innerPadding ->
         if (contentType == ScreenContentType.CATEGORIES_AND_DESTINATIONS){
-            SelectedCategoryDestinationList(
-                contentPadding = innerPadding,
-                modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
+            CategoriesAndDestinationsList(
+                categoryList = categoryList,
                 destinationList = uiState.selectedCategoryList,
-                onBackPressed = {
-                    viewModel.navigateToCategoryListPage()
-                },
+                onClick = {category ->
+                    viewModel.updateCurrentCategory(category)
+                    viewModel.updateSelectedCategoryList(category.destinations)
+                    viewModel.navigateToSelectedCategoryPage()
+                          },
+                onBackPressed = onBackPressed,
+                modifier = Modifier
+                    .padding(dimensionResource(R.dimen.padding_medium)),
+                contentPadding = innerPadding,
             )
         } else {
             if (uiState.isShowingCategoryList) {
                 HomeScreenCategoryList(
+                    categoryList = categoryList,
                     contentPadding = innerPadding,
                     modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
-                    onClick = {
-                        viewModel.updateCurrentCategory(it)
-                        viewModel.updateSelectedCategoryList(it.destinations)
+                    onClick = {category ->
+                        viewModel.updateCurrentCategory(category)
+                        viewModel.updateSelectedCategoryList(category.destinations)
                         viewModel.navigateToSelectedCategoryPage()
                     }
                 )
