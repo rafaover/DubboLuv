@@ -30,8 +30,9 @@ fun DestinationCard(
     modifier: Modifier = Modifier
 ) {
     Card(
-        modifier = modifier
+        modifier = Modifier
             .fillMaxWidth()
+            .padding(dimensionResource(R.dimen.padding_medium))
             .wrapContentHeight()
             .height(dimensionResource(R.dimen.destination_card_height)),
         elevation = CardDefaults.elevatedCardElevation()
