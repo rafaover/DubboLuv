@@ -3,14 +3,11 @@ package com.feeltheboard.dubboluv.ui.components
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.feeltheboard.dubboluv.R
 import com.feeltheboard.dubboluv.data.SelectedAsianFood
 import com.feeltheboard.dubboluv.data.categoryList
 import com.feeltheboard.dubboluv.model.Category
@@ -33,13 +30,11 @@ fun CategoriesAndDestinationsList(
             categoryList = categoryList,
             modifier = Modifier
                 .weight(1f)
-                .padding(dimensionResource(R.dimen.padding_medium)),
         )
         SelectedCategoryDestinationList(
             onBackPressed = onBackPressed,
             destinationList = destinationList,
-            modifier = Modifier
-                .weight(2f),
+            modifier = Modifier.weight(2f),
             contentPadding = contentPadding
         )
     }
