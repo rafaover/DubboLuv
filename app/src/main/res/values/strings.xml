@@ -28,4 +28,18 @@
     <string name="amazingthai_title">Amazing Thai Restaurant</string>
     <string name="amazingthai_description">Thai Restaurant in Dubbo</string>
     <string name="amazingthai_address">36 cobra street, Dubbo NSW 2830</string>
+
+        <!-- Cafe -->
+            <!-- Auctioneer -->
+    <string name="auctioneer_title">Auctioneer Cafe</string>
+    <string name="auctioneer_description">Fancy cafe in Dubbo</string>
+    <string name="auctioneer_address">46 Wingewarra St, Dubbo NSW 2830</string>
+            <!-- Creo Cafe -->
+    <string name="creo_title">Creo Art Cafe</string>
+    <string name="creo_description">Art Museum cafe in Dubbo</string>
+    <string name="creo_address">76 Wingewarra St, Dubbo NSW 2830</string>
+            <!-- Dripp -->
+    <string name="dripp_title">Dripp</string>
+    <string name="dripp_description">Super Cool cafe in Dubbo</string>
+    <string name="dripp_address">76 Macquarie St, Dubbo NSW 2830</string>
 </resources>
