@@ -1,7 +1,6 @@
 package com.feeltheboard.dubboluv.ui.components
 
 import androidx.activity.compose.BackHandler
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -19,17 +18,14 @@ fun SelectedCategoryDestinationList(
     BackHandler {
         onBackPressed()
     }
-
-    Column {
-       LazyColumn(
-           contentPadding = contentPadding
-       ) {
-           items(destinationList) {
-                DestinationCard(
-                    modifier = modifier,
-                    destination = it,
-                )
-           }
+    LazyColumn(
+        contentPadding = contentPadding,
+        modifier = modifier
+    ) {
+       items(destinationList) {destination ->
+            DestinationCard(
+                destination = destination,
+            )
        }
     }
 }

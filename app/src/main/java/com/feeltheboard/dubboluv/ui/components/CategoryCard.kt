@@ -3,6 +3,7 @@ package com.feeltheboard.dubboluv.ui.components
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -29,8 +30,9 @@ fun CategoryCard(
     modifier: Modifier = Modifier
 ) {
     Card(
-        modifier = modifier
+        modifier = Modifier
             .fillMaxWidth()
+            .padding(dimensionResource(R.dimen.padding_medium))
             .height(dimensionResource(R.dimen.category_card_height)),
         onClick = { onCardClick(category) },
         elevation = CardDefaults.elevatedCardElevation()
@@ -41,7 +43,9 @@ fun CategoryCard(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
-                modifier = modifier.size(dimensionResource(R.dimen.icon_category_card_size)),
+                modifier = Modifier
+                    .size(dimensionResource(R.dimen.icon_category_card_size))
+                    .padding(dimensionResource(R.dimen.padding_medium)),
                 painter = painterResource(category.categoryIconId),
                 contentDescription = stringResource(category.categoryTitleId),
                 tint = MaterialTheme.colorScheme.secondary,

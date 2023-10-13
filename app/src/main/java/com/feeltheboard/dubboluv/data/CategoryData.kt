@@ -13,13 +13,19 @@ val categoryList = listOf(
             id = 2,
             categoryTitleId = com.feeltheboard.dubboluv.R.string.category2_bakery,
             categoryIconId = com.feeltheboard.dubboluv.R.drawable.bakery_24,
-            destinations = SelectedAsianFood
+            destinations = SelectedCafe
         ),
         Category(
             id = 3,
             categoryTitleId = com.feeltheboard.dubboluv.R.string.category3_breakkie,
             categoryIconId = com.feeltheboard.dubboluv.R.drawable.breakfast_24,
             destinations = SelectedAsianFood
+        ),
+        Category(
+            id = 3,
+            categoryTitleId = com.feeltheboard.dubboluv.R.string.category6_coffeespot,
+            categoryIconId = com.feeltheboard.dubboluv.R.drawable.baseline_coffee_24,
+            destinations = SelectedCafe
         ),
 //            Category(
 //                id = 4,
